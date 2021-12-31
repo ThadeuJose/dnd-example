@@ -5,5 +5,15 @@ export const Container = styled.div`
   border: 1px solid lightgrey;
   border-radius: 2px;
   padding: 8px;
-  background-color: ${(props) => (props.isDragging ? "lightgreen" : "white")};
+  background-color: ${(props) => defineBackgroundColor(props)};
 `;
+
+const defineBackgroundColor = (props) => {
+  if (props.isDragDisabled) {
+    return "lightgrey";
+  }
+  if (props.isDragging) {
+    return "lightgreen";
+  }
+  return "white";
+};

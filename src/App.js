@@ -81,6 +81,7 @@ class App extends React.Component {
   render() {
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
+        <h1> Only column with same type can move between</h1>
         <Container>
           {this.state.columnOrder.map((columnId) => {
             const column = this.state.columns[columnId];

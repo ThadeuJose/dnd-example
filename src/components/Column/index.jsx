@@ -7,10 +7,10 @@ export default class Column extends React.Component{
     render(){
         return (
             <Container>                
-                <Title>{this.props.column.title} | {this.props.column.id === 'column-3' ? 'done' : 'active'}</Title>
+                <Title>{this.props.column.title}</Title>
                 <Droppable 
                     droppableId={this.props.column.id}
-                    type = {this.props.column.id === 'column-3' ? 'done' : 'active'}
+                    isDropDisabled = {this.props.isDropDisabled}
                 >
                     {(provided,snapshot)=>(
                         <TaskList ref = {provided.innerRef} {...provided.droppableProps} isDraggingOver={snapshot.isDraggingOver}>

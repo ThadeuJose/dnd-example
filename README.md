@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+
+# Drag and Drop Example using React 
+
+This code is from the course [Beautiful and Accessible Drag and Drop with react-beautiful-dnd](https://egghead.io/courses/beautiful-and-accessible-drag-and-drop-with-react-beautiful-dnd) from egghead
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

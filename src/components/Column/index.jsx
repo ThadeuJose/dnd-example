@@ -3,6 +3,15 @@ import Task from "../Task/index";
 import { Container,Title,TaskList } from "./styles";
 import { Droppable, Draggable } from "react-beautiful-dnd";
 
+class InnerList extends React.PureComponent {
+    render(){
+        return this.props.tasks.map((task,index) => (
+            <Task key={task.id} task={task} index={index}/>
+        ));
+    }
+}
+
+
 export default class Column extends React.Component{
     render(){
         return (
@@ -16,7 +25,7 @@ export default class Column extends React.Component{
                         <Droppable droppableId={this.props.column.id} type="task">
                             {(provided,snapshot)=>(
                                 <TaskList ref = {provided.innerRef} {...provided.droppableProps} isDraggingOver={snapshot.isDraggingOver}>
-                                    {this.props.tasks.map((task,index) => (<Task key={task.id} task={task} index={index}/>))}
+                                    <InnerList tasks ={this.props.tasks}/>
                                     {provided.placeholder}
                                 </TaskList>
                             )}                    
